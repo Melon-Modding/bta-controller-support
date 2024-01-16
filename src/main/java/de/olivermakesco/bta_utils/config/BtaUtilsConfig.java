@@ -19,9 +19,6 @@ public class BtaUtilsConfig {
 
     public static boolean useSdl = true;
     public static boolean disableTrample = false;
-    public static boolean discord_enable = false;
-    public static String discord_token = "SUPER SECRET TOKEN";
-    public static String discord_channel = "CHANNEL ID";
 
     public static void load() {
         File file = getFilePath();
@@ -80,14 +77,6 @@ public class BtaUtilsConfig {
     public static void updateValues(JsonObject object) {
         useSdl = get(object, "use_sdl", useSdl);
         disableTrample = get(object, "disable_trample", disableTrample);
-
-        /* discord = */ {
-            JsonObject discord = get(object, "discord", new JsonObject());
-            discord_enable = get(discord, "enable", discord_enable);
-            discord_token = get(discord, "token", discord_token);
-            discord_channel = get(discord, "channel", discord_channel);
-            object.add("discord", discord);
-        }
     }
 
     public static File getFilePath() {
@@ -97,7 +86,6 @@ public class BtaUtilsConfig {
     public static void printConfigValues() {
         BtaUtilsMod.info("use_sdl = " + useSdl);
         BtaUtilsMod.info("disable_trample = " + disableTrample);
-        BtaUtilsMod.info("discord.enable = " + discord_enable);
     }
 
     static {
