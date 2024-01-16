@@ -4,10 +4,7 @@
   "package": "de.olivermakesco.bta_utils.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "core.Mixin_BlockFarmland",
-    "server.Mixin_EntityPlayerMP",
-    "server.Mixin_NetLoginHandler",
-    "server.Mixin_NetServerHandler"
+    "core.Mixin_BlockFarmland"
   ],
   "client": [
     "client.Mixin_ControllerInput",
