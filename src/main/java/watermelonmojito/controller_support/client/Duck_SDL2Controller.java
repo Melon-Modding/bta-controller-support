@@ -1,4 +1,4 @@
-package de.olivermakesco.bta_utils.client;
+package watermelonmojito.controller_support.client;
 
 public interface Duck_SDL2Controller {
     SDLComponent bta_utils$axis(int idx);

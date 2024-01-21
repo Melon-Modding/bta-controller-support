@@ -1,4 +1,4 @@
-package de.olivermakesco.bta_utils.client;
+package watermelonmojito.controller_support.client;
 
 import net.java.games.input.Component;
 import uk.co.electronstudio.sdl2gdx.SDL2Controller;

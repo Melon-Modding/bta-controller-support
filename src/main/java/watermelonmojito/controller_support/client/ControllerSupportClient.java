@@ -1,4 +1,4 @@
-package de.olivermakesco.bta_utils.client;
+package watermelonmojito.controller_support.client;
 
 import com.badlogic.gdx.controllers.Controller;
 import com.badlogic.gdx.utils.Array;
@@ -9,7 +9,7 @@ import uk.co.electronstudio.sdl2gdx.SDL2ControllerManager;
 
 import java.util.HashMap;
 
-public class BtaUtilsClient implements ClientModInitializer {
+public class ControllerSupportClient implements ClientModInitializer {
     public static final HashMap<String, SDLComponent.ButtonType> INPUT_NAMES = new HashMap<>();
 
     public static final SDL2ControllerManager MANAGER = new SDL2ControllerManager();

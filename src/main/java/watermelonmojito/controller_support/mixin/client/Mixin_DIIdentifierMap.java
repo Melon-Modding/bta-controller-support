@@ -1,4 +1,4 @@
-package de.olivermakesco.bta_utils.mixin.client;
+package watermelonmojito.controller_support.mixin.client;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

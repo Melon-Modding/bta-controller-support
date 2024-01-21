@@ -1,10 +1,10 @@
-package de.olivermakesco.bta_utils;
+package watermelonmojito.controller_support;
 
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class BtaUtilsMod implements ModInitializer {
+public class ControllerSupportMod implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("BTA Utils");
 
     @Override

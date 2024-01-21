@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "de.olivermakesco.bta_utils.mixin",
+  "package": "watermelonmojito.controller_support.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "core.Mixin_BlockFarmland"

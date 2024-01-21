@@ -1,7 +1,7 @@
-package de.olivermakesco.bta_utils.mixin.client;
+package watermelonmojito.controller_support.mixin.client;
 
-import de.olivermakesco.bta_utils.client.Duck_SDL2Controller;
-import de.olivermakesco.bta_utils.client.SDLComponent;
+import watermelonmojito.controller_support.client.Duck_SDL2Controller;
+import watermelonmojito.controller_support.client.SDLComponent;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import org.spongepowered.asm.mixin.Mixin;

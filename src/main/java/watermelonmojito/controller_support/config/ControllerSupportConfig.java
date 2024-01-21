@@ -1,10 +1,10 @@
-package de.olivermakesco.bta_utils.config;
+package watermelonmojito.controller_support.config;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import de.olivermakesco.bta_utils.BtaUtilsMod;
+import watermelonmojito.controller_support.ControllerSupportMod;
 import net.fabricmc.loader.api.FabricLoader;
 
 import java.io.File;
@@ -12,7 +12,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class BtaUtilsConfig {
+public class ControllerSupportConfig {
     public static final Gson GSON = new GsonBuilder()
             .setPrettyPrinting()
             .create();
@@ -84,8 +84,8 @@ public class BtaUtilsConfig {
     }
 
     public static void printConfigValues() {
-        BtaUtilsMod.info("use_sdl = " + useSdl);
-        BtaUtilsMod.info("disable_trample = " + disableTrample);
+        ControllerSupportMod.info("use_sdl = " + useSdl);
+        ControllerSupportMod.info("disable_trample = " + disableTrample);
     }
 
     static {

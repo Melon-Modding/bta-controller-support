@@ -1,10 +1,10 @@
-package de.olivermakesco.bta_utils.mixin.client;
+package watermelonmojito.controller_support.mixin.client;
 
-import de.olivermakesco.bta_utils.client.BtaUtilsClient;
-import de.olivermakesco.bta_utils.client.Duck_SDL2Controller;
-import de.olivermakesco.bta_utils.client.SDLComponent;
-import de.olivermakesco.bta_utils.client.SDLDigitalPad;
-import de.olivermakesco.bta_utils.config.BtaUtilsConfig;
+import watermelonmojito.controller_support.client.ControllerSupportClient;
+import watermelonmojito.controller_support.client.Duck_SDL2Controller;
+import watermelonmojito.controller_support.client.SDLComponent;
+import watermelonmojito.controller_support.client.SDLDigitalPad;
+import watermelonmojito.controller_support.config.ControllerSupportConfig;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.java.games.input.Component;
@@ -55,7 +55,7 @@ public abstract class Mixin_ControllerInput {
     )
     private void updateSdlController(CallbackInfo ci) {
         try {
-            BtaUtilsClient.MANAGER.pollState();
+            ControllerSupportClient.MANAGER.pollState();
         } catch (SDL_Error e) {
             e.printStackTrace();
         }
@@ -67,7 +67,7 @@ public abstract class Mixin_ControllerInput {
     )
     void injectSetupHead(CallbackInfo ci) {
         try {
-            BtaUtilsClient.MANAGER.pollState();
+            ControllerSupportClient.MANAGER.pollState();
         } catch (SDL_Error e) {
             e.printStackTrace();
         }
@@ -82,11 +82,11 @@ public abstract class Mixin_ControllerInput {
             )
     )
     void updateLeftStick(ControllerInput instance, Joystick old) {
-        if (!BtaUtilsConfig.useSdl) {
+        if (!ControllerSupportConfig.useSdl) {
             joyLeft = old;
             return;
         }
-        Duck_SDL2Controller duck = (Duck_SDL2Controller) BtaUtilsClient.getController(controller.getPortNumber());
+        Duck_SDL2Controller duck = (Duck_SDL2Controller) ControllerSupportClient.getController(controller.getPortNumber());
         if (duck == null) {
             joyLeft = old;
             return;
@@ -103,11 +103,11 @@ public abstract class Mixin_ControllerInput {
             )
     )
     void updateRightStick(ControllerInput instance, Joystick old) {
-        if (!BtaUtilsConfig.useSdl) {
+        if (!ControllerSupportConfig.useSdl) {
             joyRight = old;
             return;
         }
-        Duck_SDL2Controller duck = (Duck_SDL2Controller) BtaUtilsClient.getController(controller.getPortNumber());
+        Duck_SDL2Controller duck = (Duck_SDL2Controller) ControllerSupportClient.getController(controller.getPortNumber());
         if (duck == null) {
             joyRight = old;
             return;
@@ -132,11 +132,11 @@ public abstract class Mixin_ControllerInput {
             )
     )
     void updateDigitalPad(ControllerInput instance, DigitalPad old) {
-        if (!BtaUtilsConfig.useSdl) {
+        if (!ControllerSupportConfig.useSdl) {
             digitalPad = old;
             return;
         }
-        Duck_SDL2Controller duck = (Duck_SDL2Controller) BtaUtilsClient.getController(controller.getPortNumber());
+        Duck_SDL2Controller duck = (Duck_SDL2Controller) ControllerSupportClient.getController(controller.getPortNumber());
         if (duck == null) {
             digitalPad = old;
             return;
@@ -152,11 +152,11 @@ public abstract class Mixin_ControllerInput {
             )
     )
     Component getSdlComponent(ControllerInput instance, String id) {
-        if (!BtaUtilsConfig.useSdl) {
+        if (!ControllerSupportConfig.useSdl) {
             return comp(id);
         }
 
-        Duck_SDL2Controller duck = (Duck_SDL2Controller) BtaUtilsClient.getController(controller.getPortNumber());
+        Duck_SDL2Controller duck = (Duck_SDL2Controller) ControllerSupportClient.getController(controller.getPortNumber());
 
         if (duck == null) {
             return null;
@@ -169,7 +169,7 @@ public abstract class Mixin_ControllerInput {
             return null;
         }
 
-        SDLComponent.ButtonType type = BtaUtilsClient.INPUT_NAMES.get(id);
+        SDLComponent.ButtonType type = ControllerSupportClient.INPUT_NAMES.get(id);
 
         if (type == null) {
             return null;
@@ -193,11 +193,11 @@ public abstract class Mixin_ControllerInput {
             )
     )
     void overrideTriggers(CallbackInfo ci) {
-        if (!BtaUtilsConfig.useSdl) {
+        if (!ControllerSupportConfig.useSdl) {
             return;
         }
 
-        Duck_SDL2Controller duck = (Duck_SDL2Controller) BtaUtilsClient.getController(controller.getPortNumber());
+        Duck_SDL2Controller duck = (Duck_SDL2Controller) ControllerSupportClient.getController(controller.getPortNumber());
 
         if (duck == null) {
             return;

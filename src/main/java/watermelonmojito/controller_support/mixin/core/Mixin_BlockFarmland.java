@@ -1,6 +1,6 @@
-package de.olivermakesco.bta_utils.mixin.core;
+package watermelonmojito.controller_support.mixin.core;
 
-import de.olivermakesco.bta_utils.config.BtaUtilsConfig;
+import watermelonmojito.controller_support.config.ControllerSupportConfig;
 import net.minecraft.core.block.BlockFarmland;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -18,7 +18,7 @@ public class Mixin_BlockFarmland {
             )
     )
     private int tryCancelTrample(Random instance, int bound) {
-        if (BtaUtilsConfig.disableTrample) {
+        if (ControllerSupportConfig.disableTrample) {
             return 1;
         }
         return instance.nextInt(bound);

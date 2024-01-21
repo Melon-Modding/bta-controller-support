@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
-  "id": "bta_utils",
+  "id": "controller_support",
   "version": "${version}",
 
-  "name": "BTA Utils",
+  "name": "Controller Support",
   "description": "A collection of utilities to make BTA even better!",
   "authors": [
-    "Octal"
+    "Octal",
+    "WatermelonMojito"
   ],
   "contact": {
     "sources": ""
@@ -15,14 +16,14 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "de.olivermakesco.bta_utils.BtaUtilsMod"
+      "watermelonmojito.controller_support.ControllerSupportMod"
     ],
     "client": [
-      "de.olivermakesco.bta_utils.client.BtaUtilsClient"
+      "watermelonmojito.controller_support.client.ControllerSupportClient"
     ]
   },
   "mixins": [
-    "bta_utils.mixins.json"
+    "controller_support.mixins.json"
   ],
 
   "depends": {
